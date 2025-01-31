@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine Dress Code</title>
+  <style>
+    /* Same styling as the main page */
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Valentine's Dress Code ❤️</h1>
+    <p class="heart">👗</p>
+    <p>What should we wear for the day?</p>
+
+    <div class="form">
+      <label for="dresscode">Dress Code:</label>
+      <input type="text" id="dresscode" placeholder="Formal, casual, etc...">
+
+      <button onclick="showSummary()">Finish</button>
+    </div>
+
+    <div id="summary" style="margin-top: 30px; display: none;">
+      <h2>Here's Our Plan ❤️</h2>
+      <p id="summary-details"></p>
+      <form action="https://formsubmit.co/hoyoongming@hotmail.com" method="POST" style="margin-top: 20px;">
+        <input type="hidden" name="Lunch Time" id="hidden-lunch-time">
+        <input type="hidden" name="Lunch Location" id="hidden-lunch-location">
+        <input type="hidden" name="Dinner Time" id="hidden-dinner-time">
+        <input type="hidden" name="Dinner Location" id="hidden-dinner-location">
+        <input type="hidden" name="Activity" id="hidden-activity">
+        <input type="hidden" name="Dress Code" id="hidden-dresscode">
+        <button type="submit">Send Plan to Me</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function showSummary() {
+      const dresscode = document.getElementById('dresscode').value;
+
+      if (dresscode.trim() === "") {
+        alert("Please enter a dress code.");
+        return;
+      }
+
+      const lunchTime = sessionStorage.getItem('lunchTime');
+      const lunchLocation = sessionStorage.getItem('lunchLocation');
+      const dinnerTime = sessionStorage.getItem('dinnerTime');
+      const dinnerLocation = sessionStorage.getItem('dinnerLocation');
+      const activity = sessionStorage.getItem('activity');
+
+      document.getElementById('summary-details').innerHTML = `
+        Lunch at ${lunchLocation} around ${lunchTime}.<br>
+        Dinner at ${dinnerLocation} around ${dinnerTime}.<br>
+        Activity: ${activity}.<br>
+        Dress Code: ${dresscode}.<br>
+      `;
+
+      // Set hidden input values for email
+      document.getElementById('hidden-lunch-time').value = lunchTime;
+      document.getElementById('hidden-lunch-location').value = lunchLocation;
+      document.getElementById('hidden-dinner-time').value = dinnerTime;
+      document.getElementById('hidden-dinner-location').value = dinnerLocation;
+      document.getElementById('hidden-activity').value = activity;
+      document.getElementById('hidden-dresscode').value = dresscode;
+
+      document.getElementById('summary').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
