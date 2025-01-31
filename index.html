@@ -1,73 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine Dress Code</title>
-  <style>
-    /* Same styling as the main page */
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Introduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fbe8e8;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #b10c0c;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .highlight {
+            color: #e44d4d;
+            font-weight: bold;
+        }
+        .button {
+            padding: 15px 30px;
+            background-color: #b10c0c;
+            color: white;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #e44d4d;
+        }
+    </style>
 </head>
 <body>
-  <div>
-    <h1>Valentine's Dress Code ❤️</h1>
-    <p class="heart">👗</p>
-    <p>What should we wear for the day?</p>
-
-    <div class="form">
-      <label for="dresscode">Dress Code:</label>
-      <input type="text" id="dresscode" placeholder="Formal, casual, etc...">
-
-      <button onclick="showSummary()">Finish</button>
-    </div>
-
-    <div id="summary" style="margin-top: 30px; display: none;">
-      <h2>Here's Our Plan ❤️</h2>
-      <p id="summary-details"></p>
-      <form action="https://formsubmit.co/hoyoongming@hotmail.com" method="POST" style="margin-top: 20px;">
-        <input type="hidden" name="Lunch Time" id="hidden-lunch-time">
-        <input type="hidden" name="Lunch Location" id="hidden-lunch-location">
-        <input type="hidden" name="Dinner Time" id="hidden-dinner-time">
-        <input type="hidden" name="Dinner Location" id="hidden-dinner-location">
-        <input type="hidden" name="Activity" id="hidden-activity">
-        <input type="hidden" name="Dress Code" id="hidden-dresscode">
-        <button type="submit">Send Plan to Me</button>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    function showSummary() {
-      const dresscode = document.getElementById('dresscode').value;
-
-      if (dresscode.trim() === "") {
-        alert("Please enter a dress code.");
-        return;
-      }
-
-      const lunchTime = sessionStorage.getItem('lunchTime');
-      const lunchLocation = sessionStorage.getItem('lunchLocation');
-      const dinnerTime = sessionStorage.getItem('dinnerTime');
-      const dinnerLocation = sessionStorage.getItem('dinnerLocation');
-      const activity = sessionStorage.getItem('activity');
-
-      document.getElementById('summary-details').innerHTML = `
-        Lunch at ${lunchLocation} around ${lunchTime}.<br>
-        Dinner at ${dinnerLocation} around ${dinnerTime}.<br>
-        Activity: ${activity}.<br>
-        Dress Code: ${dresscode}.<br>
-      `;
-
-      // Set hidden input values for email
-      document.getElementById('hidden-lunch-time').value = lunchTime;
-      document.getElementById('hidden-lunch-location').value = lunchLocation;
-      document.getElementById('hidden-dinner-time').value = dinnerTime;
-      document.getElementById('hidden-dinner-location').value = dinnerLocation;
-      document.getElementById('hidden-activity').value = activity;
-      document.getElementById('hidden-dresscode').value = dresscode;
-
-      document.getElementById('summary').style.display = 'block';
-    }
-  </script>
+    <h1>Welcome to a Romantic Moment</h1>
+    <p>Before we indulge in the delightful flavors of lunch, let’s take a moment to appreciate the <span class="highlight">beautiful connection</span> that brought us here today.</p>
+    <p>Whether it's love, friendship, or simply a shared moment of happiness, let this brief pause set the tone for something even more memorable.</p>
+    <a href="lunch.html" class="button">Continue to Lunch</a>
 </body>
 </html>
