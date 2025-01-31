@@ -1,0 +1,67 @@
+/* General resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fbe8e8;
+    color: #333;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    color: #b10c0c;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #e44d4d;
+}
+
+/* Button styling */
+.button {
+    padding: 15px 30px;
+    background-color: #b10c0c;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #e44d4d;
+}
+
+/* Content wrapper */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section spacing */
+.section {
+    margin-bottom: 50px;
+}
+
+.highlight {
+    color: #e44d4d;
+    font-weight: bold;
+}
