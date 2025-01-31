@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine Dinner</title>
+</head>
+<body>
+  <div>
+    <h1>Valentine's Dinner 🍷</h1>
+    <p>What time and where should we have dinner?</p>
+
+    <div class="form">
+      <label for="dinnerTime">Dinner Time:</label>
+      <input type="time" id="dinnerTime">
+      <br>
+      <label for="dinnerLocation">Dinner Location:</label>
+      <input type="text" id="dinnerLocation" placeholder="Restaurant name...">
+      <br>
+      <button onclick="saveDinnerDetails()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    function saveDinnerDetails() {
+      const dinnerTime = document.getElementById('dinnerTime').value;
+      const dinnerLocation = document.getElementById('dinnerLocation').value;
+
+      if (!dinnerTime || !dinnerLocation.trim()) {
+        alert("Please fill in both fields.");
+        return;
+      }
+
+      sessionStorage.setItem('dinnerTime', dinnerTime);
+      sessionStorage.setItem('dinnerLocation', dinnerLocation);
+      window.location.href = 'activity.html';
+    }
+  </script>
+</body>
+</html>
