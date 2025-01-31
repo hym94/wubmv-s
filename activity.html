@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine Activity</title>
+</head>
+<body>
+  <div>
+    <h1>Valentine's Activity 🎉</h1>
+    <p>What activity should we do?</p>
+
+    <div class="form">
+      <label for="activity">Activity:</label>
+      <input type="text" id="activity" placeholder="Movie, walk, etc...">
+      <br>
+      <button onclick="saveActivityDetails()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    function saveActivityDetails() {
+      const activity = document.getElementById('activity').value;
+
+      if (!activity.trim()) {
+        alert("Please enter an activity.");
+        return;
+      }
+
+      sessionStorage.setItem('activity', activity);
+      window.location.href = 'dresscode.html';
+    }
+  </script>
+</body>
+</html>
