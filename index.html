@@ -3,221 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Be My Valentine</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-top: 50px;
-    }
-
-    p {
-      font-size: 1.5rem;
-      margin: 20px 0;
-    }
-
-    .heart {
-      font-size: 5rem;
-      animation: float 3s infinite ease-in-out;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
-
-    .button {
-      background: #ff6f61;
-      color: #fff;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .button:hover {
-      background: #ff4438;
-    }
-
-    .form {
-      margin-top: 30px;
-    }
-
-    .form input, .form select {
-      padding: 10px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
-      margin: 10px 5px;
-    }
-
-    .form button {
-      padding: 10px 20px;
-      background: #6a67ce;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .form button:hover {
-      background: #5548c8;
-    }
-  </style>
-</head>
-<body>
-  <div>
-    <h1>Will You Be My Valentine? ❤️</h1>
-    <p class="heart">💕</p>
-    <p>I was wondering if you'd like to join me for lunch on Valentine's Day?</p>
-
-    <div class="form">
-      <label for="time">Preferred Lunch Time:</label>
-      <select id="time">
-        <option value="12:00 PM">12:00 PM</option>
-        <option value="1:00 PM">1:00 PM</option>
-        <option value="2:00 PM">2:00 PM</option>
-      </select>
-
-      <label for="lunch-location">Preferred Lunch Location:</label>
-      <input type="text" id="lunch-location" placeholder="Enter your favorite place...">
-
-      <button onclick="goToDinnerPage()">Next: Dinner</button>
-    </div>
-
-    <p id="response" style="margin-top: 20px; font-size: 1.2rem; color: #fff;"></p>
-  </div>
-
-  <script>
-    function goToDinnerPage() {
-      const lunchTime = document.getElementById('time').value;
-      const lunchLocation = document.getElementById('lunch-location').value;
-
-      if (lunchLocation.trim() === "") {
-        alert("Please enter a lunch location.");
-        return;
-      }
-
-      sessionStorage.setItem('lunchTime', lunchTime);
-      sessionStorage.setItem('lunchLocation', lunchLocation);
-      window.location.href = 'dinner.html';
-    }
-  </script>
-</body>
-</html>
-
-<!-- dinner.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine Dinner</title>
-  <style>
-    /* Same styling as the main page */
-  </style>
-</head>
-<body>
-  <div>
-    <h1>Valentine's Dinner ❤️</h1>
-    <p class="heart">🍽️</p>
-    <p>Let's plan a romantic dinner for Valentine's Day!</p>
-
-    <div class="form">
-      <label for="dinner-time">Preferred Dinner Time:</label>
-      <select id="dinner-time">
-        <option value="7:00 PM">7:00 PM</option>
-        <option value="8:00 PM">8:00 PM</option>
-        <option value="9:00 PM">9:00 PM</option>
-      </select>
-
-      <label for="dinner-location">Preferred Dinner Location:</label>
-      <input type="text" id="dinner-location" placeholder="Enter your favorite place...">
-
-      <button onclick="goToActivityPage()">Next: Activity</button>
-    </div>
-  </div>
-
-  <script>
-    function goToActivityPage() {
-      const dinnerTime = document.getElementById('dinner-time').value;
-      const dinnerLocation = document.getElementById('dinner-location').value;
-
-      if (dinnerLocation.trim() === "") {
-        alert("Please enter a dinner location.");
-        return;
-      }
-
-      sessionStorage.setItem('dinnerTime', dinnerTime);
-      sessionStorage.setItem('dinnerLocation', dinnerLocation);
-      window.location.href = 'activity.html';
-    }
-  </script>
-</body>
-</html>
-
-<!-- activity.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine Activity</title>
-  <style>
-    /* Same styling as the main page */
-  </style>
-</head>
-<body>
-  <div>
-    <h1>Valentine's Activity ❤️</h1>
-    <p class="heart">🎉</p>
-    <p>What would you like to do together?</p>
-
-    <div class="form">
-      <label for="activity">Activity:</label>
-      <input type="text" id="activity" placeholder="Movie, walk, etc...">
-
-      <button onclick="goToDresscodePage()">Next: Dress Code</button>
-    </div>
-  </div>
-
-  <script>
-    function goToDresscodePage() {
-      const activity = document.getElementById('activity').value;
-
-      if (activity.trim() === "") {
-        alert("Please enter an activity.");
-        return;
-      }
-
-      sessionStorage.setItem('activity', activity);
-      window.location.href = 'dresscode.html';
-    }
-  </script>
-</body>
-</html>
-
-<!-- dresscode.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Valentine Dress Code</title>
   <style>
     /* Same styling as the main page */
@@ -239,6 +24,15 @@
     <div id="summary" style="margin-top: 30px; display: none;">
       <h2>Here's Our Plan ❤️</h2>
       <p id="summary-details"></p>
+      <form action="https://formsubmit.co/your-email@example.com" method="POST" style="margin-top: 20px;">
+        <input type="hidden" name="Lunch Time" id="hidden-lunch-time">
+        <input type="hidden" name="Lunch Location" id="hidden-lunch-location">
+        <input type="hidden" name="Dinner Time" id="hidden-dinner-time">
+        <input type="hidden" name="Dinner Location" id="hidden-dinner-location">
+        <input type="hidden" name="Activity" id="hidden-activity">
+        <input type="hidden" name="Dress Code" id="hidden-dresscode">
+        <button type="submit">Send Plan to Me</button>
+      </form>
     </div>
   </div>
 
@@ -263,6 +57,14 @@
         Activity: ${activity}.<br>
         Dress Code: ${dresscode}.<br>
       `;
+
+      // Set hidden input values for email
+      document.getElementById('hidden-lunch-time').value = lunchTime;
+      document.getElementById('hidden-lunch-location').value = lunchLocation;
+      document.getElementById('hidden-dinner-time').value = dinnerTime;
+      document.getElementById('hidden-dinner-location').value = dinnerLocation;
+      document.getElementById('hidden-activity').value = activity;
+      document.getElementById('hidden-dresscode').value = dresscode;
 
       document.getElementById('summary').style.display = 'block';
     }
